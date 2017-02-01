@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+
+  <ion-slides>
+  <ion-slide>
+    <form [formGroup]="skateForm" (ngSubmit)="logForm()">
+      <ion-list>
+      <ion-item>
+        <ion-label>
+          Enter Spot Name:
+        </ion-label>
+        <ion-input type='text' formControlName='name'></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          Enter Spot Notes:
+        </ion-label>
+        <ion-input type='text' formControlName='notes'></ion-input>
+      </ion-item>
+    </ion-list>
+      <button ion-button type="submit" [disabled]="!skateForm.valid">Clickme</button>
+      <button (click)="slideNext()">Next</button>
+    </form>
+
+  </ion-slide>
+  <ion-slide>
+    <h1>Slide 2</h1>
+  </ion-slide>
+  <ion-slide>
+    <h1>Slide 3</h1>
+  </ion-slide>
+</ion-slides>
+</ion-content>
